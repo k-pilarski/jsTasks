@@ -322,3 +322,70 @@
 //     }, {});
 
 // console.log(produktySprzedane)
+
+// Zadanie 6a: Klasyfikacja Danych
+
+// Masz tablicę obiektów ocenyUczniow, gdzie każdy obiekt zawiera imieUcznia, przedmiot i ocena. Twoim zadaniem jest stworzenie obiektu, który będzie grupował oceny według przedmiotu.
+
+// Użyj metody reduce() na tablicy ocenyUczniow.
+// Wynikiem powinien być obiekt, w którym kluczem jest nazwa przedmiotu, a wartością jest tablica wszystkich ocen z tego przedmiotu.
+// Jeśli przedmiot nie ma jeszcze żadnych ocen w obiekcie wynikowym, utwórz dla niego pustą tablicę.
+
+// const ocenyUczniow = [
+//   { imieUcznia: 'Anna', przedmiot: 'Matematyka', ocena: 4 },
+//   { imieUcznia: 'Piotr', przedmiot: 'Fizyka', ocena: 5 },
+//   { imieUcznia: 'Anna', przedmiot: 'Fizyka', ocena: 3 },
+//   { imieUcznia: 'Kasia', przedmiot: 'Matematyka', ocena: 5 },
+//   { imieUcznia: 'Piotr', przedmiot: 'Chemia', ocena: 4 },
+//   { imieUcznia: 'Kasia', przedmiot: 'Chemia', ocena: 3 }
+// ];
+
+// const wszystkieOceny = ocenyUczniow
+//     .reduce((acc, cValue) => {
+//         if (acc[cValue.przedmiot]) {
+//             acc[cValue.przedmiot].push(cValue.ocena)
+//         } else {
+//             acc[cValue.przedmiot] = [cValue.ocena]
+//         }
+//         return acc
+//     }, {});
+
+// console.log(wszystkieOceny)
+
+// Oczekiwany wynik:
+// {
+//   Matematyka: [4, 5],
+//   Fizyka: [5, 3],
+//   Chemia: [4, 3]
+// }
+
+// Masz tablicę słów slowaKluczowe. Twoim zadaniem jest stworzenie z nich jednego ciągu znaków, który będzie formatował te słowa na potrzeby etykiet.
+
+// Użyj metody reduce() na tablicy slowaKluczowe.
+// Dla każdego słowa:
+// Zamień spacje na myślniki (np. "web development" -> "web-development").
+// Zamień wszystkie litery na małe (np. "PROGRAMOWANIE" -> "programowanie").
+// Dodaj przedrostek # (np. "javascript" -> "#javascript").
+// Wszystkie tak przetworzone słowa powinny być połączone w jeden ciąg znaków, oddzielone przecinkami i spacją (, ).
+
+// const slowaKluczowe = [
+//   'JavaScript',
+//   'WEB DEVELOPMENT',
+//   'Node JS',
+//   'Asynchroniczność',
+//   'FUNKCJE STRZAŁKOWE'
+// ];
+
+// const iValue = "#" + slowaKluczowe[0].toString().toLowerCase().replace(" ", "-");
+// const ciagSlow = slowaKluczowe
+//     .reduce((acc, cValue, index) => {
+//       if (cValue[index] === cValue[0]) {
+//         return acc
+//       }
+//       cValue = ", #" + cValue.toLowerCase().replace(" ", "-");
+//       return acc + cValue;
+//     }, iValue)
+
+// console.log(ciagSlow)
+
+// // Oczekiwany wynik: "#javascript, #web-development, #node-js, #asynchronicznosc, #funkcje-strzalkowe"
