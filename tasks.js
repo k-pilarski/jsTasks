@@ -292,33 +292,33 @@
 // Oblicz łączną wartość wszystkich zrealizowanych transakcji (suma ilosc * cenaJednostkowa dla transakcji ze status: 'zrealizowana').
 // Stwórz obiekt produktySprzedane, w którym kluczem będzie nazwa produktu, a wartością łączna ilość tego produktu sprzedana we wszystkich transakcjach (niezależnie od statusu). Jeśli produkt nie występuje, powinien zostać dodany.
 
-const transakcje = [
-  { id: 1, produkt: 'Książka', ilosc: 2, cenaJednostkowa: 25, status: 'zrealizowana' },
-  { id: 2, produkt: 'Długopis', ilosc: 10, cenaJednostkowa: 2.5, status: 'oczekujaca' },
-  { id: 3, produkt: 'Zeszyt', ilosc: 5, cenaJednostkowa: 7, status: 'zrealizowana' },
-  { id: 4, produkt: 'Książka', ilosc: 1, cenaJednostkowa: 25, status: 'oczekujaca' },
-  { id: 5, produkt: 'Długopis', ilosc: 3, cenaJednostkowa: 2.5, status: 'zrealizowana' },
-  { id: 6, produkt: 'Plecak', ilosc: 1, cenaJednostkowa: 120, status: 'zrealizowana' }
-];
+// const transakcje = [
+//   { id: 1, produkt: 'Książka', ilosc: 2, cenaJednostkowa: 25, status: 'zrealizowana' },
+//   { id: 2, produkt: 'Długopis', ilosc: 10, cenaJednostkowa: 2.5, status: 'oczekujaca' },
+//   { id: 3, produkt: 'Zeszyt', ilosc: 5, cenaJednostkowa: 7, status: 'zrealizowana' },
+//   { id: 4, produkt: 'Książka', ilosc: 1, cenaJednostkowa: 25, status: 'oczekujaca' },
+//   { id: 5, produkt: 'Długopis', ilosc: 3, cenaJednostkowa: 2.5, status: 'zrealizowana' },
+//   { id: 6, produkt: 'Plecak', ilosc: 1, cenaJednostkowa: 120, status: 'zrealizowana' }
+// ];
 
 
-const lacznaWartoscTranzakcji = transakcje
-    .filter(transakcja => transakcja.status === 'zrealizowana')
-    .reduce((acc, cValue) => {
-        return acc + (cValue.ilosc * cValue.cenaJednostkowa)
-    }, 0)
+// const lacznaWartoscTranzakcji = transakcje
+//     .filter(transakcja => transakcja.status === 'zrealizowana')
+//     .reduce((acc, cValue) => {
+//         return acc + (cValue.ilosc * cValue.cenaJednostkowa)
+//     }, 0)
 
-console.log(`Łączna wartość wszytkich produktów zrealizowanych wynosi: ${lacznaWartoscTranzakcji}`)
+// console.log(`Łączna wartość wszytkich produktów zrealizowanych wynosi: ${lacznaWartoscTranzakcji}`)
 
 
-const produktySprzedane = transakcje
-    .reduce((acc, cValue) => {
-        if (acc[cValue.produkt]) {
-            acc[cValue.produkt] += cValue.ilosc
-        } else {
-            acc[cValue.produkt] = cValue.ilosc
-        }
-        return acc
-    }, {});
+// const produktySprzedane = transakcje
+//     .reduce((acc, cValue) => {
+//         if (acc[cValue.produkt]) {
+//             acc[cValue.produkt] += cValue.ilosc
+//         } else {
+//             acc[cValue.produkt] = cValue.ilosc
+//         }
+//         return acc
+//     }, {});
 
-console.log(produktySprzedane)
+// console.log(produktySprzedane)
